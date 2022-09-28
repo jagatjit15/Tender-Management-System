@@ -6,8 +6,6 @@ public class AdminData {
 //	private variables with data type
 //	serial_no will be auto increment in database no need to take from user.
 	
-	private int serial_no;
-	
 	private String admin_uid;
 	
 	private String name;
@@ -28,14 +26,6 @@ public class AdminData {
 	
 //	Getter and setter methods for above private variables to use outside package
 	
-	
-	public int getSerial_no() {
-		return serial_no;
-	}
-
-	public void setSerial_no(int serial_no) {
-		this.serial_no = serial_no;
-	}
 
 	public String getAdmin_uid() {
 		return admin_uid;
@@ -114,10 +104,9 @@ public class AdminData {
 	
 	
 	
-	public AdminData(int serial_no, String admin_uid, String name, String email, String mobile, String password,
+	public AdminData( String admin_uid, String name, String email, String mobile, String password,
 			String organization, String country, String state) {
 		super();
-		this.serial_no = serial_no;
 		this.admin_uid = admin_uid;
 		this.name = name;
 		this.email = email;
@@ -132,7 +121,7 @@ public class AdminData {
 
 	@Override
 	public String toString() {
-		return "AdminRegisterForm [serial_no=" + serial_no + ", admin_uid=" + admin_uid + ", name=" + name + ", email="
+		return "AdminRegisterForm [ admin_uid=" + admin_uid + ", name=" + name + ", email="
 				+ email + ", mobile=" + mobile + ", password=" + password + ", organization=" + organization
 				+ ", country=" + country + ", state=" + state + "]";
 	}

@@ -3,6 +3,8 @@ package com.tm.usecases;
 import java.util.Scanner;
 
 import com.tm.beans.AdminData;
+import com.tm.dao.AdminDao;
+import com.tm.dao.AdminDaoImple;
 
 public class AdminRegistrationformUsecase {
 	
@@ -22,9 +24,9 @@ public class AdminRegistrationformUsecase {
 		System.out.println();
 		
 		
-//		Uid -> unique registration id will generate diferently for every user
+//		Uid -> unique registration id will generate differently for every user
 		
-		System.out.println("Enetr  2 or 3 alphabet from random position of your name and last 2 digit of your number no space");
+		System.out.println(" Enetr  2 or 3 alphabet from random position of your name and 2 digit of your number no space");
 		String admin_uid = "tm"+sc.next()+"app";
 		
 		System.out.println("Enter your firstName");
@@ -69,7 +71,12 @@ public class AdminRegistrationformUsecase {
 		admindata.setCountry(country);
 		
 		
-		System.out.println(admindata);
+		AdminDao dao = new AdminDaoImple();
+		
+		String msg = dao.newAdminRegistertoDB(admindata);
+		
+		System.out.println(msg);
+		
 		
 		
 	}

@@ -31,11 +31,19 @@ public class UserRegister {
 			
 			AdminRegistrationformUsecase.admnrForm();
 			
+			AdminSide.adminpanel();
 			
+		}
+		else if(choice == 2) {
+			
+			System.out.println("Under construction...");
+			
+		}
+		else {
+			App.main(null);
 		}
 		
 		
-		AdminSide.adminpanel();
 		
 	}
 
