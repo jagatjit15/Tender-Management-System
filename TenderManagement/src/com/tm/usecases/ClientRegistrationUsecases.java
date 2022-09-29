@@ -2,14 +2,15 @@ package com.tm.usecases;
 
 import java.util.Scanner;
 
-import com.tm.beans.AdminData;
-import com.tm.dao.AdminDao;
-import com.tm.dao.AdminDaoImple;
+import com.tm.beans.ClientsData;
+import com.tm.dao.ClientDaoImple;
+import com.tm.dao.ClientsDao;
+import com.tm.exceptions.LoginException;
 
-public class AdminRegistrationformUsecase {
+public class ClientRegistrationUsecases {
 	
-	
-	public static void admnrForm() {
+	public static void clientRgtnForm() {
+		
 		
 //		Taking input / data from user
 		
@@ -23,11 +24,8 @@ public class AdminRegistrationformUsecase {
 		
 		System.out.println();
 		
-		
-//		Uid -> unique registration id will generate differently for every user
-		
 		System.out.println(" Enetr 2 or 3 alphabet from random position of your name and 2 number");
-		String admin_uid = "tm"+sc.next()+"app";
+		String client_uid = "tm"+sc.next()+"app";
 		
 		System.out.println("Enter your firstName");
 		String fname = sc.next();
@@ -46,43 +44,50 @@ public class AdminRegistrationformUsecase {
 		System.out.println("Enter your password");
 		String password = sc.next();
 		
-		System.out.println("Enter your organization");
-		String organization = sc.next();
-		
 		System.out.println("Enter your country");
 	    String country = sc.next();
-		
-	    System.out.println("Enter your state");
-		String state = sc.next();
 		
 		
 //		creating AdminData object and set the values to constructor of AdminData Bean class
 		
 		
-		AdminData admindata = new AdminData();
+		ClientsData clientdata = new ClientsData();
 		
-		admindata.setAdmin_uid(admin_uid);
-		admindata.setName(name);
-		admindata.setEmail(email);
-		admindata.setMobile(mobile);
-		admindata.setOrganization(organization);
-		admindata.setPassword(password);
-		admindata.setState(state);
-		admindata.setCountry(country);
+		clientdata.setClient_uid(client_uid);
+		clientdata.setClient_name(name);
+		clientdata.setClient_email(email);
+		clientdata.setClient_mobile(mobile);
+		clientdata.setClient_password(password);
+		clientdata.setCountry(country);
 		
 		
-		AdminDao dao = new AdminDaoImple();
+		ClientsDao dao = new ClientDaoImple();
 		
-		String msg = dao.newAdminRegistertoDB(admindata);
+		try {
+			
+			ClientsData data = dao.ClientRegistrationForm(clientdata);
+			
+			if(data != null) {
+				
+				System.out.println();
+				System.out.println("Welcome "+data.getClient_name());
+				System.out.println("Your UserId : "+data.getClient_uid());
+				System.out.println("Your password : "+data.getClient_password());
+				System.out.println();
+				
+			}
+			
+		} catch (LoginException e) {
+			
+			System.out.println(e.getMessage());
+			
+		}
 		
-		System.out.println(msg);
+		
+		
 		
 		
 		
 	}
-	
-	
-	
-	
 
 }
