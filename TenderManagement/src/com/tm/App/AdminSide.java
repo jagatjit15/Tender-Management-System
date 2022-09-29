@@ -6,6 +6,12 @@ import com.tm.beans.AdminData;
 import com.tm.dao.AdminDao;
 import com.tm.dao.AdminDaoImple;
 import com.tm.exceptions.LoginException;
+import com.tm.usecases.AllTendersPrintUsecases;
+import com.tm.usecases.PrintAllBidsUsecases;
+import com.tm.usecases.PrintClientsDataUsecases;
+import com.tm.usecases.TenderAddUsecases;
+import com.tm.usecases.TenderAssigningUsecases;
+import com.tm.usecases.TenderDeleteUsecases;
 
 public class AdminSide {
 	
@@ -21,10 +27,11 @@ public class AdminSide {
 		System.out.println("1. Add a tender");
 		System.out.println("2. Assign a tender");
 		System.out.println("3. Delete a tender");
-		System.out.println("4. Update a tender");
-		System.out.println("5. All tenders");
-		System.out.println("6. Tender with condition");
-		System.out.println("7. Exit App");
+		System.out.println("4. All tenders");
+		System.out.println("5. All bids");
+		System.out.println("6. All Clients");
+		System.out.println("7. All Assigned Tenders");
+		System.out.println("8. Exit App");
 		
 		System.out.println();
 		
@@ -33,33 +40,52 @@ public class AdminSide {
 		
 		switch(choice) {
 		
-		case 1:
+		case 1: TenderAddUsecases.addTendertoApp();
+		        
+		        adminOperations();
+		        
 			break;
 			
-		case 2:
+		case 2:TenderAssigningUsecases.tenderAssigning();
+		        
+		       adminOperations(); 
+		
 			break;	
 		
 			
-		case 3:
+		case 3:TenderDeleteUsecases.deleteATender();
+
+	           adminOperations(); 
+	
 			break;
 			
 			
-		case 4:
+		case 4: AllTendersPrintUsecases.displayAlltenders();
+
+                adminOperations(); 
+
 			break;
 			
-		case 5:
+		case 5: PrintAllBidsUsecases.displayBids();
+
+                adminOperations(); 
+
+			break;	
+			
+		case 6:PrintClientsDataUsecases.displyaClients();
+		
+		       adminOperations(); 
+
 			break;	
 			
 			
-		case 6:
+		case 8: App.main(null);
 			break;	
 			
 			
-		case 7:
-			break;	
+		default : System.out.println("Choose a right option");
 			
-			
-		default : adminOperations();
+			adminOperations();
 		   break;
 		}
 		

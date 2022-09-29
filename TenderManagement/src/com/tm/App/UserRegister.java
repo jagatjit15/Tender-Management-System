@@ -3,6 +3,7 @@ package com.tm.App;
 import java.util.Scanner;
 
 import com.tm.usecases.AdminRegistrationformUsecase;
+import com.tm.usecases.ClientRegistrationUsecases;
 
 public class UserRegister {
 	
@@ -36,7 +37,9 @@ public class UserRegister {
 		}
 		else if(choice == 2) {
 			
-			System.out.println("Under construction...");
+			ClientRegistrationUsecases.clientRgtnForm();
+			
+			ClientSide.clientpanel();
 			
 		}
 		else {
