@@ -1,0 +1,64 @@
+create database tender_management;
+
+create table admin(
+admin_uid varchar(10) primary key,
+name varchar(20) not null,
+email varchar(30) not null unique,
+mobile varchar(11),
+password varchar(15) not null unique,
+organization varchar(15) not null,
+country varchar(15) not null,
+state varchar(15) not null
+);
+
+create table clients(
+sr_no int auto_increment unique,
+client_uid varchar(10) primary key,
+client_name varchar(20) not null,
+client_email varchar(30) not null unique,
+client_mobile varchar(11),
+client_password varchar(15) unique not null,
+country varchar(10) not null
+);
+
+
+create table tenders(
+sr_no int auto_increment unique,
+t_uid varchar(10) primary key not null,
+t_name varchar(30) not null,
+t_type varchar(12) not null,
+t_duration varchar(10) not null,
+start_date date not null,
+end_date date not null,
+status varchar(6) not null
+);
+
+
+create table tender_bids(
+sr_no int auto_increment unique,
+t_uid varchar(10) not null,
+client_uid varchar(10) not null,
+priceInCr bigInt not null,
+foreign key (t_uid) references tenders(t_uid) ON DELETE CASCADE ON UPDATE CASCADE,
+foreign key (client_uid) references clients(client_uid) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+create table assigned(
+asn_no int auto_increment unique,
+t_uid varchar(10) not null unique,
+client_uid varchar(10) not null,
+client_country varchar(15) not null,
+t_price int not null,
+assign_date date not null,
+foreign key (t_uid) references tenders(t_uid) ON DELETE CASCADE ON UPDATE CASCADE,
+foreign key (client_uid) references clients(client_uid) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+
+
+
+
+
+
+

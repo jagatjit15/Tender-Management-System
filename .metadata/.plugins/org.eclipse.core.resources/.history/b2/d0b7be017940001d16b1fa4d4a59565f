@@ -1,0 +1,129 @@
+package com.tm.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.tm.beans.AdminData;
+import com.tm.beans.ClientsData;
+import com.tm.beans.TenderBids;
+import com.tm.exceptions.LoginException;
+import com.tm.utility.DBUtility;
+
+public class ClientDaoImple implements ClientsDao{
+	
+	/***************************************************************
+	 * New Client registration form                                *
+	 * Overriden Method of ClientDao Interface                     *
+	 **************************************************************/
+
+	@Override
+	public ClientsData ClientRegistrationForm(ClientsData clientdata) throws LoginException {
+		
+		ClientsData client = new ClientsData();
+		
+           try(Connection conn = DBUtility.provideConnection()){
+			
+			PreparedStatement ps = conn.prepareStatement("insert into clients(client_uid,client_name, client_email, client_mobile,"
+					                                         + "client_password, country)"
+					                                         + "values (?,?,?,?,?,?)");
+			
+			ps.setString(1, clientdata.getClient_uid());
+			ps.setString(2, clientdata.getClient_name());
+			ps.setString(3, clientdata.getClient_email());
+			ps.setString(4, clientdata.getClient_mobile());
+			ps.setString(5, clientdata.getClient_password());
+			ps.setString(6, clientdata.getCountry());
+			
+			int x = ps.executeUpdate();
+			
+			if(x > 0) {
+				
+				client.setClient_name(clientdata.getClient_name());
+				client.setClient_uid(clientdata.getClient_uid());
+				client.setClient_password(clientdata.getClient_password());
+				
+			}
+			else {
+				throw new LoginException("Something went wrong....");
+			}
+			
+		
+		} catch (SQLException e) {
+			
+			throw new LoginException(e.getMessage());
+			
+		}
+		
+		return client;
+	}
+	
+	
+	/***************************************************************
+	 * New Client Login form                                *
+	 * Overriden Method of ClientDao Interface                     *
+	 **************************************************************/
+	
+
+	@Override
+	public ClientsData clientLoginForm(String userid, String passcode)throws LoginException {
+		
+		ClientsData data = new ClientsData();
+		
+            try(Connection conn = DBUtility.provideConnection()){
+			
+			PreparedStatement ps = conn.prepareStatement("select * from clients where client_uid = ? AND password = ?");
+			
+			ps.setString(1, userid);
+			ps.setString(2, passcode);
+			
+			ResultSet rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				
+				data.setClient_name("client_name");
+				
+			}
+			else {
+				throw new LoginException("Invalid user_Id or password....");
+			}
+			
+			
+			
+		} catch (SQLException e) {
+
+			throw new LoginException(e.getMessage());
+			
+		}
+		
+		return data;
+		
+	}
+	
+	
+	/***************************************************************
+	 * New Client Biding form                                *
+	 * Overriden Method of ClientDao Interface                     *
+	 **************************************************************/
+	
+
+	@Override
+	public String clientBidingForm(TenderBids bid) {
+		
+		String message = "Please Enter valid data";
+		
+
+        try(Connection conn = DBUtility.provideConnection()){
+			
+			PreparedStatement ps = conn.prepareStatement("insert into clients(client_uid,client_name, client_email, client_mobile,"
+					                                         + "client_password, country)"
+					                                         + "values (?,?,?,?,?,?)");
+        }catch (SQLException e) {
+			message = e.getMessage();
+		}
+		
+		return null;
+	}
+
+}

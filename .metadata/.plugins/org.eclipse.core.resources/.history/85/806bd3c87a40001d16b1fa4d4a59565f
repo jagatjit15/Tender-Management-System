@@ -1,0 +1,19 @@
+package com.tm.dao;
+
+
+import com.tm.beans.ClientsData;
+import com.tm.beans.TenderBids;
+import com.tm.exceptions.LoginException;
+import com.tm.exceptions.TenderException;
+
+public interface ClientsDao {
+	
+	public ClientsData ClientRegistrationForm(ClientsData clientdata)throws LoginException;
+
+	public ClientsData clientLoginForm(String userid, String passcode) throws LoginException;
+	
+	public String clientBidingForm(TenderBids bid);
+	
+	public TenderBids bidingHistory(String clientId) throws TenderException;
+
+}

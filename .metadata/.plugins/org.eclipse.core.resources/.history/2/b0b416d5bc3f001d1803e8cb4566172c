@@ -1,0 +1,63 @@
+package com.tm.usecases;
+
+import java.util.List;
+
+import com.tm.beans.TenderAdd;
+import com.tm.dao.AdminDao;
+import com.tm.dao.AdminDaoImple;
+import com.tm.exceptions.TenderException;
+
+public class AllTendersPrintUsecases {
+	
+	
+	public static void displayAlltenders() {
+		
+		System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+		System.out.println("Availabe Tenders");
+		System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+		System.out.println();
+		
+		AdminDao dao = new AdminDaoImple();
+		
+		try {
+			
+			List<TenderAdd> tendersList = dao.printAllTenders();
+			
+
+			if(tendersList.isEmpty()) {
+				System.out.println("Data not found.....");
+			}
+			else {
+				
+				System.out.println("*************************");
+				
+				tendersList.forEach(tender -> {
+					
+					System.out.println(tender.getT_uid());
+					System.out.println(tender.getT_name());
+					System.out.println(tender.getStatus());
+					System.out.println(tender.getT_duration());
+					System.out.println(tender.getStart_date());
+					System.out.println(tender.getEnd_date());
+					System.out.println(tender.getT_type());
+					
+					
+				});
+				
+				System.out.println("*************************");
+			}
+			
+			
+			
+			
+		} catch (TenderException e) {
+			
+			System.out.println(e.getMessage());
+			
+		}
+		
+	}
+	
+	
+
+}

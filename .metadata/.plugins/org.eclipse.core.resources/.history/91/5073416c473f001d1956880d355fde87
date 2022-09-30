@@ -1,0 +1,48 @@
+package com.tm.App;
+
+import java.util.Scanner;
+
+import com.tm.beans.AdminData;
+import com.tm.dao.AdminDao;
+import com.tm.dao.AdminDaoImple;
+import com.tm.exceptions.LoginException;
+
+public class AdminSide {
+	
+	public static void adminpanel() {
+		
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println();
+		
+		System.out.println("********> ADMIN LOGIN <********");
+		
+		System.out.println();
+		
+		System.out.println("=================================");
+		
+		System.out.println("Enter you Userid");
+		String userid = sc.next();
+		
+		System.out.println("Enter your password");
+		String passcode = sc.next();
+		
+		AdminDao dao = new AdminDaoImple();
+		
+		try {
+			
+			
+			
+			AdminData admindata = dao.adminLoginForm(userid, passcode);
+			
+			
+		} catch (LoginException e) {
+
+			System.out.println(e.getMessage());
+			
+		}
+		
+	}
+
+}

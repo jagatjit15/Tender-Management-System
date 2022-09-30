@@ -1,0 +1,14 @@
+package com.tm.usecases;
+
+public class BidingFormUsecases {
+	
+	public static void clientBiding() {
+		
+		System.out.println("<><><>< Welcome To Biding ><><><>");
+		
+		
+		
+		
+	}
+
+}

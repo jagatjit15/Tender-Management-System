@@ -1,0 +1,33 @@
+package com.tm.usecases;
+
+import java.util.Scanner;
+
+public class BidingFormUsecases {
+	
+	public static void clientBiding() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println();
+		
+		System.out.println("<><><>< Welcome To Biding ><><><>");
+		
+		System.out.println();
+		
+		System.out.println("Enter your UniqueId/UserID");
+		String userId = sc.next();
+		
+		System.out.println("Enter UniqueId of Tender You want to bod for");
+		String tenderId = sc.next();
+		
+		System.out.println("Enter amount you want to Bid (between 10 - 10000");
+		int price = sc.nextInt();
+		
+		
+		
+		
+		
+		
+	}
+
+}

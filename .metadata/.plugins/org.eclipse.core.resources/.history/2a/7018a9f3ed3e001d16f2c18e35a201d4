@@ -1,0 +1,26 @@
+package com.tm.beans;
+
+public class AdminRegisterForm {
+	
+	private int serial_no;
+	
+	private String admin_uid;
+	
+	private String name;
+
+	private String email;
+	
+	private String mobile;
+	
+	private String password;
+	
+	private String organization;
+	
+	private String country;
+	
+	private String state;
+	
+//	Getter and setter methods for above private variables to use outside package
+	
+
+}

@@ -1,0 +1,11 @@
+package com.tm.exceptions;
+
+public class LoginException extends Exception {
+	
+	public LoginException() {
+		
+//		This method will through an exception if exception occurs 
+		
+	}
+
+}

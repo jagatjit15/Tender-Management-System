@@ -1,0 +1,61 @@
+package com.tm.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.tm.beans.ClientsData;
+import com.tm.exceptions.LoginException;
+import com.tm.utility.DBUtility;
+
+public class ClientDaoImple implements ClientsDao{
+	
+	/***************************************************************
+	 * New Client registration form                                *
+	 * Overriden Method of ClientDao Interface                     *
+	 **************************************************************/
+
+	@Override
+	public ClientsData ClientRegistrationUsecases(ClientsData clientdata) throws LoginException {
+		
+		ClientsData client = new ClientsData();
+		
+           try(Connection conn = DBUtility.provideConnection()){
+			
+			PreparedStatement ps = conn.prepareStatement("insert into clients(client_uid,client_name, client_email, client_mobile,"
+					                                         + "client_password, country)"
+					                                         + "values (?,?,?,?,?,?)");
+			
+			ps.setString(1, clientdata.getAdmin_uid());
+			ps.setString(2, clientdata.getName());
+			ps.setString(3, clientdata.getEmail());
+			ps.setString(4, clientdata.getMobile());
+			ps.setString(5, clientdata.getPassword());
+			ps.setString(6, clientdata.getOrganization());
+			ps.setString(7, clientdata.getCountry());
+			ps.setString(8, clientdata.getState());
+			
+			int x = ps.executeUpdate();
+			
+			if(x > 0) {
+				
+				client.setClient_name(null);
+				client.setClient_uid(null);
+				client.setClient_password(null);
+				
+			}
+			else {
+				throw new LoginException("Something went wrong....");
+			}
+			
+		
+		} catch (SQLException e) {
+			
+			throw new LoginException(e.getMessage());
+			
+		}
+		
+		return client;
+	}
+
+}

@@ -1,0 +1,21 @@
+package com.tm.beans;
+
+public class ClientsData {
+	
+	private int sr_no;
+	
+	private String client_uid;
+	
+	private String client_name;
+	
+	private String client_email;
+	
+	private String client_mobile;
+	
+	private String client_password;
+	
+	private String country;
+	
+	
+
+}

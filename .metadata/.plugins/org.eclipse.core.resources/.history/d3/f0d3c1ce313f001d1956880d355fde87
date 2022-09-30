@@ -1,0 +1,9 @@
+package com.tm.App;
+
+public class AdminSide {
+	
+	public static void adminpanel() {
+		
+	}
+
+}

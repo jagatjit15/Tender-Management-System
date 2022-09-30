@@ -1,0 +1,14 @@
+package com.tm.dao;
+
+import com.tm.beans.ClientsData;
+import com.tm.exceptions.LoginException;
+
+public class ClientDaoImple implements ClientsDao{
+
+	@Override
+	public ClientsData ClientRegistrationUsecases(ClientsData clientdata) throws LoginException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

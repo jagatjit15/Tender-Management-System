@@ -1,0 +1,5 @@
+package com.tm.beans;
+
+public class ClientsData {
+
+}

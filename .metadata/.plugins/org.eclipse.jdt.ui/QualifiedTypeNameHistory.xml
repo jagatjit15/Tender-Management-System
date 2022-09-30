@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="com.tm.App.UserRegister"/>
+    <fullyQualifiedTypeName name="com.tm.beans.AdminRegisterForm"/>
+    <fullyQualifiedTypeName name="com.tm.usecases.AdminRegistrationformUsecase"/>
+    <fullyQualifiedTypeName name="com.tm.App.App"/>
+    <fullyQualifiedTypeName name="com.tm.beans.AdminData"/>
+    <fullyQualifiedTypeName name="com.tm.App.AdminSide"/>
+    <fullyQualifiedTypeName name="com.tm.usecases.TenderAddUsecases"/>
+    <fullyQualifiedTypeName name="com.tm.usecases.TenderAssigningUsecases"/>
+    <fullyQualifiedTypeName name="com.tm.usecases.TenderDeleteUsecases"/>
+    <fullyQualifiedTypeName name="com.tm.usecases.AllTendersPrintUsecases"/>
+    <fullyQualifiedTypeName name="com.tm.usecases.PrintAllBidsUsecases"/>
+    <fullyQualifiedTypeName name="com.tm.dao.AdminDao"/>
+    <fullyQualifiedTypeName name="com.tm.dao.AdminDaoImple"/>
+    <fullyQualifiedTypeName name="com.tm.usecases.PrintClientsDataUsecases"/>
+    <fullyQualifiedTypeName name="com.tm.App.ClientSide"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="com.tm.utility.DBUtility"/>
+    <fullyQualifiedTypeName name="com.tm.usecases.ClientRegistrationUsecases"/>
+    <fullyQualifiedTypeName name="com.tm.exceptions.LoginException"/>
+    <fullyQualifiedTypeName name="com.tm.beans.ClientsData"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="com.tm.usecases.BidingFormUsecases"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="com.tm.dao.ClientsDao"/>
+    <fullyQualifiedTypeName name="com.tm.dao.ClientDaoImple"/>
+    <fullyQualifiedTypeName name="com.tm.beans.TenderBids"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="com.tm.usecases.ClientBidingHistoryUsecases"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.tm.exceptions.TenderException"/>
+    <fullyQualifiedTypeName name="com.tm.beans.TenderAdd"/>
+    <fullyQualifiedTypeName name="com.tm.usecases.ClientAssignedBidUsecases"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,13 @@
+package com.tm.usecases;
+
+public class ClientRegistrationUsecases {
+	
+	public static void clientRgtnForm() {
+		
+		
+		
+		
+		
+	}
+
+}

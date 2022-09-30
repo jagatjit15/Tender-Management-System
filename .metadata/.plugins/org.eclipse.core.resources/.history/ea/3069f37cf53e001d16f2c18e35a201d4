@@ -1,0 +1,7 @@
+package com.tm.dao;
+
+public interface AdminDao {
+	
+	
+
+}

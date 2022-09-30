@@ -1,0 +1,23 @@
+package com.tm.usecases;
+
+import java.util.Scanner;
+
+public class TenderAddUsecases {
+	
+	public static void addTendertoApp() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("*********************************");
+		
+		System.out.println("Enter your Tender details");
+		
+		System.out.println("*********************************");
+		
+		System.out.println();
+		
+		System.out.println("Enter your tender name (max 30 character)");
+		String name = sc.next();
+	}
+
+}
