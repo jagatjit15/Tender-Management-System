@@ -1,0 +1,23 @@
+package com.tm.beans;
+
+public class TenderAdd {
+	
+	private int to_no;
+	
+	private String to_uid;
+	
+	private String to_name;
+	
+	private String to_description;
+	
+	private String to_type;
+	
+	private String to_duration;
+	
+	private String start_date;
+	
+	private String end_date;
+	
+	private String status;
+
+}

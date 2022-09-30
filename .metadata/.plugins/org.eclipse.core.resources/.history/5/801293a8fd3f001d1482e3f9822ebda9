@@ -1,0 +1,82 @@
+package com.tm.usecases;
+
+import java.util.Scanner;
+
+import com.tm.beans.AdminData;
+import com.tm.beans.ClientsData;
+import com.tm.dao.AdminDao;
+import com.tm.dao.AdminDaoImple;
+
+public class AdminRegistrationformUsecase {
+	
+	
+	public static void admnrForm() {
+		
+//		Taking input / data from user
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println();
+		
+		System.out.println("Enter your details to register with us");
+		
+		System.out.println("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+");
+		
+		System.out.println();
+		
+		
+//		Uid -> unique registration id will generate differently for every user
+		
+		System.out.println(" Enetr 2 or 3 alphabet from random position of your name & 2 number");
+		String client_uid = "c&"+sc.next()+"@tm";
+		
+		System.out.println("Enter your firstName");
+		String fname = sc.next();
+		
+		System.out.println("Enter your lastName");
+		String lname = sc.next();
+		
+		String name = fname+" "+lname;
+
+		System.out.println("Enter your email");
+		String email = sc.next();
+		
+		System.out.println("Enter your mobile number");
+		String mobile = sc.next();
+		
+		System.out.println("Enter your password");
+		String password = sc.next();
+		
+		System.out.println("Enter your country");
+	    String country = sc.next();
+		
+		
+		
+//		creating AdminData object and set the values to constructor of AdminData Bean class
+		
+		
+		ClientsData clientdata = new ClientsData();
+		
+		clientdata.setClient_uid(client_uid);
+		clientdata.setClient_name(name);
+		clientdata.setClient_email(email);
+		clientdata.setClient_mobile(mobile);
+		clientdata.setClient_password(password);
+		clientdata.setCountry(country);
+		
+		
+		AdminDao dao = new AdminDaoImple();
+		
+		String msg = dao.newAdminRegistertoDB(admindata);
+		
+		System.out.println(msg);
+		
+		
+		
+	}
+	
+	
+	
+	
+
+}

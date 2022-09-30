@@ -1,0 +1,27 @@
+package com.tm.usecases;
+
+import java.util.Scanner;
+
+public class ClientRegistrationUsecases {
+	
+	public static void clientRgtnForm() {
+		
+		
+//		Taking input / data from user
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println();
+		
+		System.out.println("Enter your details to register with us");
+		
+		System.out.println("=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+");
+		
+		System.out.println();
+		
+		
+		
+		
+	}
+
+}

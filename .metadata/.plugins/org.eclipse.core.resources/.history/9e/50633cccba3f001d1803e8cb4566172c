@@ -1,0 +1,12 @@
+package com.tm.usecases;
+
+public class AllTendersPrintUsecases {
+	
+	
+	public static void printAllTenders() {
+		
+	}
+	
+	
+
+}

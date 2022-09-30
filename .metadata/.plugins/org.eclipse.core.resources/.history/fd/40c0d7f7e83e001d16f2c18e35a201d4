@@ -1,0 +1,9 @@
+package com.tm.App;
+
+public class UserRegister {
+	
+	public static void registerform() {
+		System.out.println("Registered......");
+	}
+
+}

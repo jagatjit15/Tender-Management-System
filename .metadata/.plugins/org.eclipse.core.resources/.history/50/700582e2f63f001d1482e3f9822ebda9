@@ -1,0 +1,34 @@
+package com.tm.usecases;
+
+import java.util.List;
+
+import com.tm.beans.ClientsData;
+import com.tm.dao.AdminDao;
+import com.tm.dao.AdminDaoImple;
+import com.tm.exceptions.TenderException;
+
+public class PrintClientsDataUsecases {
+	
+	public static void displyaClients() {
+		
+		System.out.println();
+		
+		System.out.println("~~~~~~~~ All Clients ~~~~~~~~~");
+		
+		System.out.println();
+		
+		AdminDao dao = new AdminDaoImple();
+		
+		try {
+			
+			List<ClientsData> clientsList = dao.printAllClients();
+			
+		} catch (TenderException e) {
+			
+			e.printStackTrace();
+			
+		}
+		
+	}
+
+}

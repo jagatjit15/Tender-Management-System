@@ -1,0 +1,65 @@
+package com.tm.usecases;
+
+import java.util.List;
+import java.util.Scanner;
+
+import com.tm.beans.TenderAdd;
+import com.tm.beans.TenderBids;
+import com.tm.dao.ClientDaoImple;
+import com.tm.dao.ClientsDao;
+import com.tm.exceptions.TenderException;
+
+public class ClientAssignedBidUsecases {
+	
+	public static void displayStatusofBiding() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println();
+		System.out.println("><><><><> You Biding Status <><><><><");
+		System.out.println();
+		
+		System.out.println("Enter you userId / UniqueId");
+		String id = sc.next();
+		
+		System.out.println();
+		
+		ClientsDao dao = new ClientDaoImple();
+		
+		try {
+			
+			List<TenderAdd> tender = dao.assignedTenderToClient(id);
+			
+			if(tender.isEmpty()) {
+				
+				System.out.println("You are not assigned to any tender");
+				
+			}else {
+				
+				System.out.println("You have total "+tender.size()+" biding History");
+				
+				tender.forEach(bid ->{
+					
+					System.out.println("Your client_Id : "+bid.getT_uid());
+					System.out.println("Your Tender_Id : "+bid.getT_name());
+					System.out.println("Your Bid price : "+bid.getT_type());
+					
+				});
+				
+				
+			}
+			
+			
+		} catch (TenderException e) {
+
+			System.out.println(e.getMessage());
+			
+			System.out.println();
+			
+		}
+		
+		
+		
+	}
+
+}

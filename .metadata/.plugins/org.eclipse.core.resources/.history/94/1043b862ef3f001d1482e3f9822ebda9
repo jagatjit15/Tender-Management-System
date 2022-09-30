@@ -1,0 +1,26 @@
+package com.tm.dao;
+
+import java.util.List;
+
+import com.tm.beans.AdminData;
+import com.tm.beans.TenderAdd;
+import com.tm.exceptions.LoginException;
+import com.tm.exceptions.TenderException;
+
+public interface AdminDao {
+	
+	public String newAdminRegistertoDB(AdminData admindata);
+	
+	public AdminData adminLoginForm(String username, String password) throws LoginException;
+	
+	public TenderAdd tenderAddtoApp(TenderAdd addtender) throws TenderException;
+	
+	public String assignTenderToVendor(String tenderId, String clientId, String date);
+	
+	public TenderAdd deleteTender(String tenderId)throws TenderException;
+	
+	public List<TenderAdd> printAllTenders() throws TenderException;
+	
+	public List<TenderBids> printAllBids();
+
+}

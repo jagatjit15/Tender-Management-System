@@ -1,0 +1,31 @@
+package com.tm.utility;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class DBUtility {
+	
+	
+	public static Connection provideConnection() {
+		
+		Connection conn = null;
+		
+		try {
+			
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			
+		} catch (ClassNotFoundException e) {
+			
+			e.printStackTrace();
+			
+		}
+		
+		String url = "jdbc:mysql://localhost:3306/tender_management";
+		
+		conn = DriverManager.getConnection(url, "root", "15Nek#sql");
+		
+		
+		return conn;
+	}
+
+}

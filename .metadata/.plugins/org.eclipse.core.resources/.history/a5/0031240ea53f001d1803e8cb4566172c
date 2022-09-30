@@ -1,0 +1,68 @@
+package com.tm.usecases;
+
+import java.util.Scanner;
+
+import com.tm.beans.TenderAdd;
+import com.tm.dao.AdminDao;
+import com.tm.dao.AdminDaoImple;
+
+public class TenderAddUsecases {
+	
+	public static void addTendertoApp() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("*********************************");
+		
+		System.out.println("Enter your Tender details");
+		
+		System.out.println("*********************************");
+		
+		System.out.println();
+		
+		System.out.println("Enter your tender name (max 30 character)");
+		String name = sc.next();
+		
+		System.out.println("Enter your tender description (max 70 character)");
+		String desc = sc.nextLine();
+		sc.nextLine();
+		
+		System.out.println("Enter your tender Type ( like corporate, construct, road...)");
+		System.out.println("Max 12 character");
+		String type = sc.next();
+		
+		System.out.println("Enter duration of tender (1 or 2...)");
+		String duration = sc.next()+"Year";
+		
+		System.out.println("Enter Tender release date (ex :- yyyy-mm-dd -> 2022-09-30)");
+		String start = sc.next();
+		
+		System.out.println("Enter Tender close date (ex :- yyyy-mm-dd -> 2022-09-30)");
+		String end = sc.next();
+		
+		System.out.println("Enter any 3 character and 2 number randomly (ex : amx23)");
+		String uid = "x4"+sc.next()+"A$";
+		
+		
+		String status = "Open";
+		
+		
+		AdminDao dao = new AdminDaoImple();
+		
+		TenderAdd tender = new TenderAdd();
+		
+		tender.setT_uid(uid);
+		tender.setT_name(name);
+		tender.setT_name(type);
+		tender.setT_description(desc);
+		tender.setT_duration(duration);
+		tender.setStart_date(start);
+		tender.setEnd_date(end);
+		tender.setStatus(status);
+		
+		String msg = dao.tenderAddtoApp(tender);
+		
+		
+	}
+
+}

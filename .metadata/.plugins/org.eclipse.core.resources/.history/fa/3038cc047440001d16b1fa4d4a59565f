@@ -1,0 +1,68 @@
+package com.tm.App;
+
+import java.util.Scanner;
+
+import com.tm.beans.AdminData;
+import com.tm.beans.ClientsData;
+import com.tm.dao.AdminDao;
+import com.tm.dao.AdminDaoImple;
+import com.tm.dao.ClientDaoImple;
+import com.tm.dao.ClientsDao;
+import com.tm.exceptions.LoginException;
+
+public class ClientSide {
+	
+	
+	public static void clientpanel() {
+
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println();
+		
+		System.out.println("********> VENDER LOGIN <********");
+		
+		System.out.println();
+		
+		System.out.println("=================================");
+		
+		System.out.println("Enter you Userid");
+		String userid = sc.next();
+		
+		System.out.println("Enter your password");
+		String passcode = sc.next();
+		
+		ClientsDao dao = new ClientDaoImple();
+		
+		try {
+			
+			
+			ClientsData clientData = dao.clientLoginForm(userid, passcode);
+			
+			System.out.println();
+			
+			System.out.println("********** --> Welcome "+clientData.getClient_name()+" <-- **********");
+			
+			System.out.println();
+			
+			System.out.println("....***....***....***....***....***....***.....***....");
+			
+			
+			
+			
+		} catch (LoginException e) {
+
+			System.out.println(e.getMessage());
+			
+			System.out.println();
+			
+			System.out.println("Please Enter Valid User_id and Password");
+			
+			AdminSide.adminpanel();
+			
+			
+		}
+		
+	}
+	
+
+}

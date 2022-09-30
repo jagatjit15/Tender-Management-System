@@ -1,0 +1,18 @@
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="java.util.Iterator"><rhs name\="java.util.Scanner"/></lhs><lhs name\="java.io.Closeable"><rhs name\="java.util.Scanner"/></lhs><lhs name\="java.lang.AutoCloseable"><rhs name\="java.util.Scanner"/></lhs><lhs name\="com.tm.beans.AdminData"><rhs name\="com.tm.beans.AdminData"/></lhs><lhs name\="com.tm.dao.AdminDao"><rhs name\="com.tm.dao.AdminDaoImple"/></lhs><lhs name\="com.tm.beans.TenderAdd"><rhs name\="com.tm.beans.TenderAdd"/></lhs><lhs name\="java.util.Collection"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.lang.Iterable"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="java.util.List"><rhs name\="java.util.ArrayList"/></lhs><lhs name\="com.tm.beans.ClientsData"><rhs name\="com.tm.beans.ClientsData"/></lhs><lhs name\="com.tm.dao.ClientsDao"><rhs name\="com.tm.dao.ClientDaoImple"/></lhs><lhs name\="com.tm.beans.TenderBids"><rhs name\="com.tm.beans.TenderBids"/></lhs></history>
+content_assist_number_of_computers=15
+eclipse.preferences.version=1
+org.eclipse.jdt.ui.formatterprofiles.version=22
+spelling_ignore_ampersand_in_properties=true
+spelling_ignore_digits=true
+spelling_ignore_java_strings=true
+spelling_ignore_mixed=true
+spelling_ignore_non_letters=true
+spelling_ignore_sentence=true
+spelling_ignore_single_letters=true
+spelling_ignore_upper=true
+spelling_ignore_urls=true
+spelling_locale_initialized=true
+spelling_user_dictionary_encoding=windows-1252
+typefilter_migrated_2=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

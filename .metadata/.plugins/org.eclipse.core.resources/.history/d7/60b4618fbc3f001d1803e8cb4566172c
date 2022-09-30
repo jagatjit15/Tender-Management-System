@@ -1,0 +1,41 @@
+package com.tm.usecases;
+
+import java.util.List;
+
+import com.tm.beans.TenderAdd;
+import com.tm.dao.AdminDao;
+import com.tm.dao.AdminDaoImple;
+import com.tm.exceptions.TenderException;
+
+public class AllTendersPrintUsecases {
+	
+	
+	public static void displayAlltenders() {
+		
+		System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+		System.out.println("Availabe Tenders");
+		System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+		System.out.println();
+		
+		AdminDao dao = new AdminDaoImple();
+		
+		try {
+			
+			List<TenderAdd> tendersList = dao.printAllTenders();
+			
+
+			if(tendersList.isEmpty()) {
+				System.out.println("Data not found.....");
+			}
+			
+		} catch (TenderException e) {
+			
+			System.out.println(e.getMessage());
+			
+		}
+		
+	}
+	
+	
+
+}

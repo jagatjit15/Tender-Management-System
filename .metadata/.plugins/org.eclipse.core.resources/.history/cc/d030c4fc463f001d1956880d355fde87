@@ -1,0 +1,30 @@
+package com.tm.App;
+
+import java.util.Scanner;
+
+public class AdminSide {
+	
+	public static void adminpanel() {
+		
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println();
+		
+		System.out.println("********> ADMIN LOGIN <********");
+		
+		System.out.println();
+		
+		System.out.println("=================================");
+		
+		System.out.println("Enter you Userid");
+		String userid = sc.next();
+		
+		System.out.println("Enter your password");
+		String passcode = sc.next();
+		
+		
+		
+	}
+
+}
