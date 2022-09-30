@@ -27,12 +27,13 @@ public class PrintAllBidsUsecases {
 			else {
 				
 				bidLists.forEach(bids ->{
+					System.out.println();
 					
 					System.out.println(" Tender UniqueId :-> "+bids.getT_uid());
 					System.out.println(" Client UniqueId :-> "+bids.getClient_uid());
-					System.out.println(" Client bidPrice :-> "+bids.getPriceInCr());
+					System.out.println(" Client bidPrice in Cr:-> "+bids.getPriceInCr());
 					
-					
+					System.out.println();
 				});
 				
 			}
@@ -40,6 +41,7 @@ public class PrintAllBidsUsecases {
 		} catch (TenderException e) {
 
 			System.out.println(e.getMessage());
+			System.out.println();
 			
 		}
 		

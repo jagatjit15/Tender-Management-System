@@ -29,9 +29,10 @@ public class AllTendersPrintUsecases {
 			}
 			else {
 				
-				System.out.println("*************************");
 				
 				tendersList.forEach(tender -> {
+					
+					System.out.println();
 					
 					System.out.println("Tender UniqueId -> "+tender.getT_uid());
 					System.out.println(" Tender Name -> "+tender.getT_name());
@@ -43,8 +44,9 @@ public class AllTendersPrintUsecases {
 					
 					
 				});
-				
-				System.out.println("*************************");
+				System.out.println();
+				System.out.println("************************************************************************");
+				System.out.println();
 			}
 			
 			
@@ -53,6 +55,7 @@ public class AllTendersPrintUsecases {
 		} catch (TenderException e) {
 			
 			System.out.println(e.getMessage());
+			System.out.println();
 			
 		}
 		

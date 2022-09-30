@@ -22,7 +22,7 @@ public class AdminSide {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("@@@@-> Menu <-@@@@");
+		System.out.println("<><><><>< Menu ><><><><>");
 		
 		System.out.println("1. Add a tender");
 		System.out.println("2. Assign a tender");
@@ -30,8 +30,7 @@ public class AdminSide {
 		System.out.println("4. All tenders");
 		System.out.println("5. All bids");
 		System.out.println("6. All Clients");
-		System.out.println("7. All Assigned Tenders");
-		System.out.println("8. Exit App");
+		System.out.println("7. Exit App");
 		
 		System.out.println();
 		
@@ -79,7 +78,7 @@ public class AdminSide {
 			break;	
 			
 			
-		case 8: App.main(null);
+		case 7: App.main(null);
 			break;	
 			
 			
@@ -129,7 +128,6 @@ public class AdminSide {
 			
 			System.out.println();
 			
-			System.out.println("....***....***....***....***....***....***.....***....");
 			
 			adminOperations();
 			
