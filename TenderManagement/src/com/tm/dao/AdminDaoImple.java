@@ -23,7 +23,7 @@ public class AdminDaoImple implements AdminDao{
 	@Override
 	public String newAdminRegistertoDB(AdminData admindata) {
 		
-		String message = "Something went wrong....try later...";
+		String message = "Try again....";
 		
 		
 		try(Connection conn = DBUtility.provideConnection()){
@@ -52,7 +52,7 @@ public class AdminDaoImple implements AdminDao{
 		
 		} catch (SQLException e) {
 			
-			e.printStackTrace();
+			message = e.getMessage();
 			
 		}
 		

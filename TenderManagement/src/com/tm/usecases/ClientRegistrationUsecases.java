@@ -80,7 +80,7 @@ public class ClientRegistrationUsecases {
 		} catch (LoginException e) {
 			
 			System.out.println(e.getMessage());
-			
+			System.out.println();
 		}
 		
 		

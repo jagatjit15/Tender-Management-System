@@ -31,6 +31,7 @@ public class PrintClientsDataUsecases {
 			else {
 				
 				clientsList.forEach(client -> {
+					System.out.println();
 					
 					System.out.println("Client Name : "+client.getClient_name());
 					

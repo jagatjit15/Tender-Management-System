@@ -60,9 +60,11 @@ public class TenderAddUsecases {
 			TenderAdd output = dao.tenderAddtoApp(tender);
 
 			System.out.println("*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*");
+			System.out.println();
 			
 			System.out.println("Tender with id "+ output.getT_uid()+" added Successfully.....");
 			
+			System.out.println();
 			System.out.println("*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*");
 
 			System.out.println();
@@ -70,6 +72,7 @@ public class TenderAddUsecases {
 		} catch (TenderException e) {
 
 			System.out.println(e.getMessage());
+			System.out.println();
 		}
 		
 	}
