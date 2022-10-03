@@ -112,7 +112,7 @@ public class ClientSide {
 			
 			System.out.println();
 			
-			System.out.println("********** --> Welcome "+ clientData.getClient_name() +" <-- **********");
+			System.out.println("********** --> Welcome <-- **********");
 			
 			System.out.println();
 			
@@ -127,9 +127,7 @@ public class ClientSide {
 			
 			System.out.println();
 			
-			
-			ClientSide.clientpanel();
-			
+			App.main(null);
 			
 		}
 		

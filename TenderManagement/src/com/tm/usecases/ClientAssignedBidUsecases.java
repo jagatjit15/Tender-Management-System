@@ -23,6 +23,8 @@ public class ClientAssignedBidUsecases {
 		
 		System.out.println();
 		
+		sc.close();
+		
 		ClientsDao dao = new ClientDaoImple();
 		
 		try {

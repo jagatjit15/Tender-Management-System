@@ -154,7 +154,7 @@ public class ClientDaoImple implements ClientsDao{
 			
 			}else {
 				
-				message = "You have already placed Bid on it";
+				message = "May be You already placed bid on it or it is closed please check";
 				
 			}
 			

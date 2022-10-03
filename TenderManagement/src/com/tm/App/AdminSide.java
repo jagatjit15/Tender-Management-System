@@ -140,7 +140,7 @@ public class AdminSide {
 			
 			System.out.println("Please Enter Valid User_id and Password");
 			
-			AdminSide.adminpanel();
+			App.main(null);
 			
 			
 		}

@@ -29,6 +29,8 @@ public static void tenderAssigning() {
 	String date = sc.next();
 	
 	System.out.println();
+	sc.close();
+
 	
 	AdminDao dao = new AdminDaoImple();
 	

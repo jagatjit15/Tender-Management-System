@@ -231,7 +231,6 @@ public class AdminDaoImple implements AdminDao{
 		return message;
 	}
 
-
 	/*
 	 ***********************************************************
 	 *for Deleting a tender
